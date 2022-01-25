@@ -1,5 +1,7 @@
 package com.springdatarest.eventmanagementapi.entities;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import javax.persistence.*;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -20,6 +22,7 @@ public class Event extends AbstractEntity{
     @OneToMany(mappedBy = "event",fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Participant> participants;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @RestResource(exported = false)
     private Venue venue;
 
     public Organizer getOrganizer() {
@@ -92,6 +95,10 @@ public class Event extends AbstractEntity{
 
     public void setStarted(Boolean started) {
         this.started = started;
+    }
+
+    public Long getResourceId(){
+        return this.id;
     }
 
     @Override

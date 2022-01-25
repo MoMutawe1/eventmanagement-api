@@ -28,6 +28,10 @@ public class Organizer extends AbstractEntity{
         this.name = name;
     }
 
+    public Long getResourceId(){
+        return this.id;
+    }
+
     @Override
     public boolean equals(Object obj){
         return Objects.equals(id,((Organizer)obj).id);

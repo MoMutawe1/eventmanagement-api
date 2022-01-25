@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Venue extends AbstractEntity{
 
     private String name;
-    private String streetAddress1;
+    private String streetAddress;
     private String streetAddress2;
     private String city;
     private String state;
@@ -23,11 +23,11 @@ public class Venue extends AbstractEntity{
     }
 
     public String getStreetAddress1() {
-        return streetAddress1;
+        return streetAddress;
     }
 
     public void setStreetAddress1(String streetAddress1) {
-        this.streetAddress1 = streetAddress1;
+        this.streetAddress = streetAddress1;
     }
 
     public String getStreetAddress2() {
@@ -68,6 +68,10 @@ public class Venue extends AbstractEntity{
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public Long getResourceId(){
+        return this.id;
     }
 
     @Override
