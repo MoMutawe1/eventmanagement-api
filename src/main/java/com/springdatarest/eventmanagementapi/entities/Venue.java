@@ -22,11 +22,11 @@ public class Venue extends AbstractEntity{
         this.name = name;
     }
 
-    public String getStreetAddress1() {
+    public String getStreetAddress() {
         return streetAddress;
     }
 
-    public void setStreetAddress1(String streetAddress1) {
+    public void setStreetAddress(String streetAddress1) {
         this.streetAddress = streetAddress1;
     }
 
